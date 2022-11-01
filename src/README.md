@@ -1,4 +1,18 @@
 ### Project sructure 
+
+
+- `node_modules` appears after installing dependecies.
+- `out` appears after packaging an app.
+- `package-lock.json` and `package.json` - default files, see how to use them here [here](https://docs.npmjs.com/cli/v8/configuring-npm/package-json).
+- `src` - main folder with html, css and js files.
+    - `main.js` - the entry point of application. This script controls the main process: **connects and communicates with the server**, creates a webpage, **connects to data base** and **sends emails**. 
+    - `preload.js` - this script is used to provide secure communication between other scripts, main and the whole Node.js APIs by using [ContextBridge](https://www.electronjs.org/docs/latest/api/context-bridge) and [IPC](https://www.electronjs.org/docs/latest/tutorial/ipc). It has the same sandbox as a Chrome extension. Read more about preload [here](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload).
+    - `server_config.json` - connection settings, contains info about MQTT server. 
+    - `database_config.json` - mySQL database settings. 
+    - `settings_data` - dashboard configuration. This files should be fetched from the server, but in demo version they are stored locally. 
+    - `templates` - folder with most html/css/js files and packages for rendering. See more [here](https://github.com/rainbowbrained/Timer/tree/master/src/templates).
+
+
 ```
 ├── node_modules
 ├── out
@@ -84,39 +98,3 @@
             ├── selectFX 
             └── themify-icons 
 ```
-- `node_modules` appears after installing dependecies.
-- `out` appears after packaging an app.
-- `package-lock.json` and `package.json` - default files, see how to use them here [here](https://docs.npmjs.com/cli/v8/configuring-npm/package-json).
-- `src` - main folder with html, css and js files.
-    - `main.js` - the entry point of application. This script controls the main process: **connects and communicates with the server**, creates a webpage, **connects to data base** and **sends emails**. 
-    - `preload.js` - this script is used to provide secure communication between other scripts, main and the whole Node.js APIs by using [ContextBridge](https://www.electronjs.org/docs/latest/api/context-bridge) and [IPC](https://www.electronjs.org/docs/latest/tutorial/ipc). It has the same sandbox as a Chrome extension. Reaad more about preload [here](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload).
-
-
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-
-├── node_modules
-├── out
-├── package.json
-├── package-lock.json
-├── README.md
-└── src
-    ├── database_config.json
-    ├── main.js
-    ├── preload.js
-    ├── renderer.js
-    ├── server_config.json
-    ├── settings_data
-    │   ├── dashboard_elements.json
-    │   ├── dashboard.json
-    │   └── goals.json
-    └── templates
-        ├── assets
