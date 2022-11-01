@@ -1,53 +1,40 @@
-# Timer
-Electron-based gamification  system for drive-trhough restaurants to improve perfomance.
-
+ 
+# «Timer demo»  
  
 ## Technologies
 - [Electron](https://electronjs.org/)
-- [Electron-Forge](https://www.electronforge.io/) 
+- [Electron-Forge](https://www.electronforge.io/)
+
 - [MYQTT](https://www.npmjs.com/package/mqtt/)
-- [MySQL](https://www.npmjs.com/package/mysql/) 
+- [MySQL](https://www.npmjs.com/package/mysql/)
+ s
     
 ## Features
-- :cloud: Getting data about cars from MQTT server.
-- :file: Storing dashboard configuration and data locally in MySQL database.
-- :key: HTML templates for settings.
-- :keyboard: Convenient onscreen keyboard.
-- :bookmark_tabs: Reports for cars, settings and trends.
-- :clipboard: Save Report as PDF and CSV.
-- :car: Changing colors depending on goals!
-- :sparkles: Friendly UI & UX and Has nice looking window. 
- 
+- :zap: Fast!!!
+- :sparkles: Friendly UI & UX and Has nice looking window.
+- :cloud: Cloud data service.
+- :inbox_tray: Products Management.
+- :busts_in_silhouette: Customers Management.
+- :truck: Orders Management and Order Overview.
+- :ship: Multiple Orders.
+- :chart_with_upwards_trend: Statistics
+- :chart_with_downwards_trend: Graph of The Week **(NEW!!!)**.
+- :top: Top Selling Products.
+- :open_hands: Customers List on Product Overview.
+- :bookmark_tabs: Reports for Products, Orders, Customers.
+- :key: Profile Settings.
+- :jp: Multilingual Translations.
+- :yen: Change Currency.
+- :clipboard: Save Report as PDF.
+- :100: Check for update app.
+- :moneybag: Free! :)
+
+**If you think Storaji is useful, let me know by putting a star on this project :wink:**
 
 ## Screenshots
 <p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/dashboard.jpg?raw=true" />
+  <img src="https://github.com/IndomaximTechID/storaji/blob/gh-pages/screenshoots/cover.png?raw=true" />
 </p>
-
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/keyboard1.jpg?raw=true" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/keayboard2.jpg?raw=true" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/settings1.jpg?raw=true" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/settings2.jpg?raw=true" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/reports.jpg?raw=true" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/security.jpg?raw=true" />
-</p>
-
 
 ## Why
 Mainly designed for small-to-medium companies, Storaji is a modern and very intuitive inventory management application built with some of the trendiest web technologies.
@@ -63,9 +50,9 @@ I believe there are many people who needs a simple tool to manage everything fro
 - PHP Composer.
 
 #### Backend
-- Clone the project from [IndomaximTechID/storaji](https://github.com/rainbowbrained/Timer) to your local machine.
-- Open terminal and `cd` into the cloned folder, usually `cd Timer`.
-- Run `npm install` to install dependencies. Or run `npm install --include=dev` to install dependencies.
+- Clone the project from [IndomaximTechID/storaji](https://github.com/IndomaximTechID/storaji/) to your local machine.
+- Open terminal and `cd` into the cloned folder, usually `cd storaji`.
+- Run `composer install` to install dependencies.
 - Run `cp .env.example .env` to copy the original environtment variables.
 - Modify `.env` file, find `DATABASE_` prefix and change it to your database configuration, you can see documentation about this on [Laravel Site](https://laravel.com/docs/configuration#environment-configuration).
 - Run `php artisan key:generate` to generate application key.
@@ -102,3 +89,4 @@ MIT License © 2017-Present [Indomaxim Technology](https://github.com/IndomaximT
 
 ## Legal
 This is a free and open source app. Use it at your own risk.
+

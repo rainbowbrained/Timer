@@ -1,0 +1,84 @@
+{
+  "name": "timer3",
+  "productName": "timer3",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/main.js",
+  "scripts": { 
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "preinstall": "npx npm-force-resolutions",
+    "postinstall": "electron-builder install-app-deps",
+    "postcommit": "git reset" 
+ 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainbowbrained/Timer"
+  },
+  "homepage": "https://github.com/rainbowbrained/Timer#readme",
+  "keywords": [],
+  "author": {
+    "name": "rainbowbrained",
+    "email": "rainbowbrained@icloud.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "timer3"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "resolutions": {
+    "glob-parent": "6.0.1",
+    "minimatch": "5.0.1"
+ },
+ 
+  "dependencies": {
+    "glob-parent": "^6.0.1",
+    "minimatch": "^5.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "fs": "^0.0.1-security",
+    "mqtt": "^1.6.0" ,
+    "mysql": "^2.18.0",
+    "nodemailer": "^6.8.0" 
+       
+  },
+  "devDependencies": {
+    "glob-parent": "^6.0.1",
+    "minimatch": "^5.0.1",
+    "@electron-forge/cli": "^6.0.0-beta.67",
+    "@electron-forge/maker-deb": "^6.0.0-beta.67",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.67",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.67",
+    "@electron-forge/maker-zip": "^6.0.0-beta.67",
+    "electron": "21.2.0",
+    "fs": "^0.0.1-security",
+    "mqtt": "^1.6.0" ,
+    "mysql": "^2.18.0",
+    "nodemailer": "^6.8.0"   
+  }
+}
