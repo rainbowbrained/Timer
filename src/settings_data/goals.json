@@ -1,0 +1,11 @@
+{ 
+  "cars_goalA": 20,
+  "cars_goalB": 40,
+  "menu_goalA": 20,
+  "menu_goalB": 40,
+  "cash_goalA": 20,
+  "cash_goalB": 40,
+  "serv_goalA": 20,
+  "serv_goalB": 40 
+
+}

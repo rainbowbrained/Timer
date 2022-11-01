@@ -1,0 +1,8 @@
+{ 
+    "host": "mq1.drthr.ru",
+    "port": 22097,
+    "reconnectPeriod": 1000,
+    "clientId": "myclient"  
+  }
+   
+  
