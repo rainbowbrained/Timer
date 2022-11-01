@@ -1,0 +1,985 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>✨ Drive-through timer ✨</title>
+   <meta name="description" content="Drive-through timer">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="./lib/images/logo.jpg">
+
+   <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+   <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/keyboardstyle.css">
+   <link rel="stylesheet" href="assets/css/dashboard_settings.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+   <!-- Display this message if Javascript is disabled -->
+   <noscript>
+      <h2>Enable Javascript!</h2>
+      <p>
+         This HTML 5 app requires Javascript to run. Please check that Javascript
+         is enabled in your browser.
+      </p>
+   </noscript>
+
+   <!-- Left Panel -->
+   <aside id="left-panel" class="left-panel">
+      <nav class="navbar navbar-expand-sm navbar-default">
+         <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+               <li>
+                  <a href="dashboard.html"> <i class="menu-icon ti-menu"></i>ОБРАТНО К ПАНЕЛИ</a>
+               </li>
+               <li>
+                  <a href="dashboard-settings.html"> <i class="menu-icon ti-view-grid"></i>НАСТРОЙКА ПАНЕЛИ</a>
+               </li>
+               <li class="selected-menu">
+                  <a href="store-settings.html"> <i class="menu-icon ti-home"></i>РЕСТОРАН </a>
+               </li>
+               <li>
+                  <a href="network-settings.html"> <i class="menu-icon ti-world"></i>СЕТЬ </a>
+               </li>
+               <li>
+                  <a href="detectors-settings.html"> <i class="menu-icon ti-settings"></i>ДАТЧИКИ</a>
+               </li>
+               <li>
+                  <a href="cardetectors-settings.html"><i class="menu-icon ti-car"></i>НАСТРОЙКИ ДЕТЕКТОРОВ МАШИН</a>
+               </li>
+               <li>
+                  <a href="reports-settings.html"> <i class="menu-icon ti-clipboard"></i>ОТЧЕТЫ</a>
+               </li>
+               <li>
+                  <a href="security-settings.html"> <i class="menu-icon ti-lock"></i>ЗАЩИТА </a>
+               </li>
+               <li>
+                  <a href="system-settings.html"> <i class="menu-icon ti-desktop"></i>СИСТЕМА </a>
+               </li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </nav>
+   </aside>
+   <!-- /#left-panel -->
+   <!-- Right Panel -->
+   <div id="right-panel" class="right-panel">
+
+      <!-- Header-->
+      <header id="header" class="header">
+         <div class="header-menu">
+
+            <div class="col-sm-7">
+               <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+               <div class="header-left">
+                  <button class="search-trigger"><i class="fa fa-search"></i></button>
+                  <div class="form-inline">
+                     <form class="search-form">
+                        <input class="form-control mr-sm-2  import-usual-keyboard" type="text" placeholder="Поиск ..."
+                           aria-label="Search">
+                        <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-sm-5">
+               <div class="user-area dropdown float-right">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                     <div class="login-icon ti-user login_big_icon"></div>
+                     Вы вошли как:<div id="login_type"> менеджер </div>
+                  </a>
+
+                  <div class="user-menu dropdown-menu">
+                     <a class="nav-link" href="security-settings.html"><i class="fa fa-cog"></i> Поменять пароль </a>
+                     <a class="nav-link" href="security-settings.html"><i class="fa fa-power-off"></i> Выйти</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </header><!-- /header -->
+      <!-- Header-->
+
+
+      <div class="content mt-3">
+         <h1>РЕСТОРАН </h1>
+         <br>
+         <div class="animated fadeIn">
+            <div class="row">
+               <ul class="nav nav-tabs" id="storeTab" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active" id="address-tab" data-toggle="tab" href="#address" role="tab"
+                        aria-controls="address" aria-selected="true">Детали</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="datetime-tab" data-toggle="tab" href="#datetime" role="tab"
+                        aria-controls="datetime" aria-selected="false">Дата и время</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="hours-tab" data-toggle="tab" href="#hours" role="tab" aria-controls="hours"
+                        aria-selected="false">Часы</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="dayparts-tab" data-toggle="tab" href="#dayparts" role="tab"
+                        aria-controls="dayparts" aria-selected="false">Смены</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab" data-toggle="tab" href="#timegoals" role="tab"
+                        aria-controls="timegoals" aria-selected="false">Цели скорости</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab" data-toggle="tab" href="#cargoals" role="tab"
+                        aria-controls="cargoals" aria-selected="false">Цели машин</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="row">
+               <div class="tab-content pl-3 p-1" id="storeTabContent">
+                  <div class="tab-pane fade show active" id="address" role="tabpanel" aria-labelledby="address-tab">
+                     <div class="col-lg-6">
+                        <div class="card">
+                           <div class="card-header">
+                              <strong>Информация о ресторане</strong>
+                           </div>
+                           <div class="card-body card-block">
+                              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="storenumber-input"
+                                          class=" form-control-label">Номер ресторана</label></div>
+                                    <div class="col-12 col-md-9"><input type="number" id="storenumber-input"
+                                          name="storenumber-input" placeholder="12345"
+                                          class="form-control import-number-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="storename-input"
+                                          class=" form-control-label">Название ресторана</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="storename-input"
+                                          name="storename-input" placeholder="Мой рест"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Бренд
+                                          ресторана</label></div>
+                                    <div class="col-12 col-md-9">
+                                       <select name="select" id="select_brand" class="form-control">
+                                          <option value="0">Выберите бренд вашего ресторана</option>
+                                          <option value="1">Option #1</option>
+                                          <option value="2">Option #2</option>
+                                          <option value="3">Option #3</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="storeadress-input"
+                                          class=" form-control-label">Адрес ресторана</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="storadress-input"
+                                          name="storadress-input"
+                                          placeholder="г. Городской, ул. Уличная, д. 123, к. 321"
+                                          class="form-control import-usual-keyboard">
+                                       <small class="help-block form-text">Введите адрес ресторана в свободной
+                                          форме</small>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="card-footer">
+                              <button type="submit" class="btn btn-success btn-sm">
+                                 <i class="fa fa-dot-circle-o"></i> Сохранить
+                              </button>
+                              <button type="reset" class="btn btn-danger btn-sm">
+                                 <i class="fa fa-ban"></i> Сброс
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="card">
+                           <div class="card-header">
+                              <strong>Адрес ресторана</strong>
+                           </div>
+                           <div class="card-body card-block">
+                              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="storezip-input"
+                                          class=" form-control-label">Индекс</label></div>
+                                    <div class="col-12 col-md-9"><input type="number" id="storezip-input"
+                                          name="storezip-input" placeholder="123456"
+                                          class="form-control import-number-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="region-input"
+                                          class=" form-control-label">Регион</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="region-input"
+                                          name="region-input" placeholder="Регион"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="city-input"
+                                          class=" form-control-label">Город</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="street-input"
+                                          name="street-input" placeholder="Город"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="street-input"
+                                          class=" form-control-label">Улица</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="street-input"
+                                          name="street-input" placeholder="Улица"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="housenum-input"
+                                          class=" form-control-label">Дом</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="housenum-input"
+                                          name="housenum-input" placeholder="123"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="card-footer">
+                              <button type="submit" class="btn btn-success btn-sm">
+                                 <i class="fa fa-dot-circle-o"></i> Сохранить
+                              </button>
+                              <button type="reset" class="btn btn-danger btn-sm">
+                                 <i class="fa fa-ban"></i> Сброс
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="datetime" role="tabpanel" aria-labelledby="datetime-tab">
+                     <div class="col-lg-12">
+                        <div class="card" style="margin-top: 10px;">
+                           <div class="card-body card-block">
+                              <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="systemdate-input"
+                                          class=" form-control-label">Системная дата</label></div>
+                                    <div class="col-12 col-md-9"><input type="date" autocomplete="on"
+                                          id="systemdate-input" name="systemdate-input" placeholder="01/01/1900"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="systemtime-input"
+                                          class=" form-control-label">Системное время</label></div>
+                                    <div class="col-12 col-md-9"><input type="time" autocomplete="on"
+                                          id="systemtime-input" name="systemtime-input" placeholder="12:34"
+                                          class="form-control import-usual-keyboard">
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Часовой
+                                          пояс</label></div>
+                                    <div class="col-12 col-md-9">
+                                       <select name="select" id="select_timezone" class="form-control">
+                                          <option value="0">Please select</option>
+                                          <option value="1">Option #1</option>
+                                          <option value="2">Option #2</option>
+                                          <option value="3">Option #3</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">Формат времени</label>
+                                    </div>
+                                    <div class="col col-md-9">
+                                       <div class="form-check-inline form-check">
+                                          <label for="timeformat-radio1" class="form-check-label ">
+                                             <input type="radio" id="timeformat-radio1" name="timeformat-radios"
+                                                value="12" class="form-check-input">12-часовой
+                                          </label>
+                                          <label for="timeformat-radio2" class="form-check-label ">
+                                             <input type="radio" id="timeformat-radio2" name="timeformat-radios"
+                                                value="24" class="form-check-input"
+                                                style="margin-left: 10px;">24-часовой
+                                          </label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">Отображение
+                                          времени</label></div>
+                                    <div class="col col-md-9">
+                                       <div class="form-check-inline form-check">
+                                          <label for="timeformatminsec-radio1" class="form-check-label ">
+                                             <input type="radio" id="timeformatminsec-radio1"
+                                                name="timeformatminsec-radios" value="minsec" class="form-check-input"
+                                                style="margin-left: 10px; ">Минуты:Секунды
+                                          </label>
+                                          <label for="timeformatminsec-radio2" class="form-check-label ">
+                                             <input type="radio" id="timeformatminsec-radio2"
+                                                name="timeformatminsec-radios" value="sec" class="form-check-input"
+                                                style="margin-left: 10px;">Секунды
+                                          </label>
+                                       </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card-footer">
+                        <button type="submit" class="btn btn-success btn-sm">
+                           <i class="fa fa-dot-circle-o"></i> Сохранить
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                           <i class="fa fa-ban"></i> Сброс
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="tab-pane fade" id="hours" role="tabpanel" aria-labelledby="hours-tab">
+               <div class="col-lg-12">
+                  <div class="card">
+                     <div class="card-body">
+                        <table class="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th scope="col">ДЕНЬ</th>
+                                 <th scope="col">ВРЕМЯ ОТКРЫТИЯ</th>
+                                 <th scope="col">ВРЕМЯ ЗАКРЫТИЯ</th>
+                                 <th scope="col">OFF/ON</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th scope="row">Понедельник</th>
+                                 <td>
+                                    <p class="col-lg-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00" class="form-control import-number-keyboard timegoals-form-input">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-lg-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">Вторник</th>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">Среда</th>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00" class="form-control import-number-keyboard timegoals-form-input">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">Четверг</th>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">Пятница</th>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00" class="form-control import-number-keyboard timegoals-form-input">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">Суббота</th>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">Воскресенье</th>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="5:00" class="form-control import-number-keyboard timegoals-form-input">
+                                    </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-6"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td> <label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                          class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                                          class="switch-handle"></span></label> </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="dayparts" role="tabpanel" aria-labelledby="dayparts-tab">
+               <div class="col-lg-6">
+                  <div class="card">
+                     <div class="card-header">
+                        <strong>Время суток</strong>
+                     </div>
+                     <div class="card-body card-block">
+                        <table class="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th scope="col"> №</th>
+                                 <th scope="col">ВРЕМЯ НАЧАЛА</th>
+                                 <th scope="col">НАЗВАНИЕ</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th scope="row">1</th>
+                                 <td>
+                                    <p class="col-lg-8"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="6:00" class="form-control import-number-keyboard timegoals-form-input">
+                                    </p>
+                                 </td>
+                                 <td>Завтрак 1</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">2</th>
+                                 <td>
+                                    <p class="col-lg-8"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="9:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>Завтрак 2</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">3</th>
+                                 <td>
+                                    <p class="col-lg-8"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="12:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td>Обед 1</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">4</th>
+                                 <td>
+                                    <p class="col-lg-8"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="15:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>Обед 2</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">5</th>
+                                 <td>
+                                    <p class="col-lg-8"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="18:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td>Ужин 1</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">6</th>
+                                 <td>
+                                    <p class="col-lg-8"><input type="text" id="systemtime-input" name="systemtime-input"
+                                          value="21:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>Ужин 2</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="card-footer">
+                        <button type="submit" class="btn btn-success btn-sm">
+                           <i class="fa fa-dot-circle-o"></i> Сохранить
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                           <i class="fa fa-ban"></i> Сброс
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="card">
+                     <div class="card-header">
+                        <strong>Смены</strong>
+                     </div>
+                     <div class="card-body card-block">
+                        <table class="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th scope="col"> №</th>
+                                 <th scope="col">ВРЕМЯ НАЧАЛА</th>
+                                 <th scope="col">ВРЕМЯ КОНЦА</th>
+                                 <th scope="col">НАЗВАНИЕ</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th scope="row">1</th>
+                                 <td>
+                                    <p class="col-lg-12"><input type="text" id="systemtime-input"
+                                          name="systemtime-input" value="6:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-lg-12"><input type="text" id="systemtime-input"
+                                          name="systemtime-input" value="12:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td>Утро</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">2</th>
+                                 <td>
+                                    <p class="col-lg-12"><input type="text" id="systemtime-input"
+                                          name="systemtime-input" value="12:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-lg-12"><input type="text" id="systemtime-input"
+                                          name="systemtime-input" value="18:00"
+                                          class="form-control import-number-keyboard timegoals-form-input-dark"> </p>
+                                 </td>
+                                 <td>День</td>
+                              </tr>
+                              <tr>
+                                 <th scope="row">3</th>
+                                 <td>
+                                    <p class="col-lg-12"><input type="text" id="systemtime-input"
+                                          name="systemtime-input" value="18:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td>
+                                    <p class="col-lg-12"><input type="text" id="systemtime-input"
+                                          name="systemtime-input" value="23:00"
+                                          class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                 </td>
+                                 <td>Вечер</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="card-footer">
+                        <button type="submit" class="btn btn-success btn-sm">
+                           <i class="fa fa-dot-circle-o"></i> Сохранить
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                           <i class="fa fa-ban"></i> Сброс
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="timegoals" role="tabpanel" aria-labelledby="timegoals-tab">
+               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-top: 10px;;">
+                  <li class="nav-item">
+                     <a class="nav-link active" id="timegoals-tab-mon" data-toggle="pill"
+                        href="#timegoals-tab-mon-content" role="tab" aria-controls="timegoals-tab-mon"
+                        aria-selected="true">Пн</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab-tue" data-toggle="pill" href="#timegoals-tab-tue-content"
+                        role="tab" aria-controls="timegoals-tab-tue" aria-selected="false">Вт</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab-wed" data-toggle="pill" href="#timegoals-tab-wed-content"
+                        role="tab" aria-controls="timegoals-tab-wed" aria-selected="false">Ср</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab-thi" data-toggle="pill" href="#timegoals-tab-thu-content"
+                        role="tab" aria-controls="timegoals-tab-thu" aria-selected="false">Чт</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab-fri" data-toggle="pill" href="#timegoals-tab-fri-content"
+                        role="tab" aria-controls="timegoals-tab-fri" aria-selected="false">Пт</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab-sat" data-toggle="pill" href="#timegoals-tab-sat-content"
+                        role="tab" aria-controls="timegoals-tab-sat" aria-selected="false">Сб</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="timegoals-tab-sun" data-toggle="pill" href="#timegoals-tab-sun-content"
+                        role="tab" aria-controls="timegoals-tab-sun" aria-selected="false">Вс</a>
+                  </li>
+                  <button type="button" class="btn btn-primary btn-lg" style="margin-left: 30px;"
+                     id="apply_timegoals_toall">Применить ко всем</button>
+               </ul>
+               <div class="tab-content pl-3 pt-2" id="timegoalsdays-tab">
+                  <div class="tab-pane fade show active" id="timegoals-tab-mon-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-mon">
+                     <div class="col-lg-12">
+                        <div class="card" style="margin-top: 10px;">
+                           <div class="card-body card-block">
+                              <table class="table table-striped">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">СОБЫТИЕ</th>
+                                       <th scope="col">ЦЕЛЬ A</th>
+                                       <th scope="col">ЦЕЛЬ B</th>
+                                       <th scope="col">ЦЕЛЬ C</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Итого по линии</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="2:00"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="3:00"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="4:00"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>Меню</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:30"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:45"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="1:00"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>Оплата</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:15"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:20"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:25"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>Выдача</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:15"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:20"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="text" id="systemtime-input"
+                                                name="systemtime-input" value="0:25"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="card-footer">
+                              <button type="submit" class="btn btn-success btn-sm">
+                                 <i class="fa fa-dot-circle-o"></i> Сохранить
+                              </button>
+                              <button type="reset" class="btn btn-danger btn-sm">
+                                 <i class="fa fa-ban"></i> Сброс
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade " id="timegoals-tab-tue-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-tue">2
+                  </div>
+                  <div class="tab-pane fade " id="timegoals-tab-wed-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-wed"> 3
+                  </div>
+                  <div class="tab-pane fade " id="timegoals-tab-thu-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-thu"> 4
+                  </div>
+                  <div class="tab-pane fade " id="timegoals-tab-fri-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-fri"> 5
+                  </div>
+                  <div class="tab-pane fade " id="timegoals-tab-sat-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-sat"> 6
+                  </div>
+                  <div class="tab-pane fade " id="timegoals-tab-sun-content" role="tabpanel"
+                     aria-labelledby="timegoals-tab-sun"> 7
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="cargoals" role="tabpanel" aria-labelledby="cargoals-tab">
+               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-top: 10px;">
+                  <li class="nav-item">
+                     <a class="nav-link active" id="cargoals-tab-mon" data-toggle="pill"
+                        href="#cargoals-tab-mon-content" role="tab" aria-controls="cargoals-tab-mon"
+                        aria-selected="true">Пн</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab-tue" data-toggle="pill" href="#cargoals-tab-tue-content"
+                        role="tab" aria-controls="cargoals-tab-tue" aria-selected="false">Вт</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab-wed" data-toggle="pill" href="#cargoals-tab-wed-content"
+                        role="tab" aria-controls="cargoals-tab-wed" aria-selected="false">Ср</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab-thi" data-toggle="pill" href="#cargoals-tab-thu-content"
+                        role="tab" aria-controls="cargoals-tab-thu" aria-selected="false">Чт</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab-fri" data-toggle="pill" href="#cargoals-tab-fri-content"
+                        role="tab" aria-controls="cargoals-tab-fri" aria-selected="false">Пт</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab-sat" data-toggle="pill" href="#cargoals-tab-sat-content"
+                        role="tab" aria-controls="cargoals-tab-sat" aria-selected="false">Сб</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" id="cargoals-tab-sun" data-toggle="pill" href="#cargoals-tab-sun-content"
+                        role="tab" aria-controls="cargoals-tab-sun" aria-selected="false">Вс</a>
+                  </li>
+                  <button type="button" class="btn btn-primary btn-lg" style="margin-left: 30px;"
+                     id="apply_cargoals_toall">Применить ко всем</button>
+               </ul>
+               <div class="tab-content pl-3 pt-2" id="cargoalsdays-tab">
+                  <div class="tab-pane fade show active" id="cargoals-tab-mon-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-mon">
+                     <div class="col-lg-6">
+                        <div class="card" style="margin-top: 10px;">
+                           <div class="card-body card-block">
+                              <table class="table table-striped">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">ВРЕМЯ</th>
+                                       <th scope="col">ЦЕЛЬ A</th>
+                                       <th scope="col">ЦЕЛЬ B</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>0:00</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="30"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="20"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>1:00</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="30"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="20"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="card-footer">
+                              <button type="submit" class="btn btn-success btn-sm">
+                                 <i class="fa fa-dot-circle-o"></i> Сохранить
+                              </button>
+                              <button type="reset" class="btn btn-danger btn-sm">
+                                 <i class="fa fa-ban"></i> Сброс
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="card" style="margin-top: 10px;">
+                           <div class="card-body card-block">
+                              <table class="table table-striped">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">ВРЕМЯ</th>
+                                       <th scope="col">ЦЕЛЬ A</th>
+                                       <th scope="col">ЦЕЛЬ B</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>0:00</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="30"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="20"
+                                                class="form-control import-number-keyboard timegoals-form-input"> </p>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>1:00</td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="30"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                       <td>
+                                          <p class="col-lg-8"><input type="number" id="systemtime-input"
+                                                name="systemtime-input" value="20"
+                                                class="form-control import-number-keyboard timegoals-form-input-dark">
+                                          </p>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="card-footer">
+                              <button type="submit" class="btn btn-success btn-sm">
+                                 <i class="fa fa-dot-circle-o"></i> Сохранить
+                              </button>
+                              <button type="reset" class="btn btn-danger btn-sm">
+                                 <i class="fa fa-ban"></i> Сброс
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade " id="cargoals-tab-tue-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-tue">2
+                  </div>
+                  <div class="tab-pane fade " id="cargoals-tab-wed-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-wed"> 3
+                  </div>
+                  <div class="tab-pane fade " id="cargoals-tab-thu-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-thu"> 4
+                  </div>
+                  <div class="tab-pane fade " id="cargoals-tab-fri-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-fri"> 5
+                  </div>
+                  <div class="tab-pane fade " id="cargoals-tab-sat-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-sat"> 6
+                  </div>
+                  <div class="tab-pane fade " id="cargoals-tab-sun-content" role="tabpanel"
+                     aria-labelledby="cargoals-tab-sun"> 7
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- /# </div>-->
+      </div>
+      <!-- /# column  -->
+   </div>
+   <!-- .animated -->
+   </div>
+   <!-- .content -->
+   </div>
+   <!-- /#right-panel -->
+   <!-- Right Panel -->
+   <script src="vendors/jquery/dist/jquery.min.js"></script>
+   <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+   <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/keyboard.js"></script>
+</body>
+
+</html>
