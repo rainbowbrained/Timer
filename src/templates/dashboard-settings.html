@@ -1,0 +1,346 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>✨ Drive-through timer ✨</title>
+   <meta name="description" content="Drive-through timer">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="./lib/images/logo.jpg">
+
+   <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+   <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/keyboardstyle.css">
+   <link rel="stylesheet" href="assets/css/dashboard_settings.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+   <!-- Display this message if Javascript is disabled -->
+   <noscript>
+      <h2>Enable Javascript!</h2>
+      <p>
+         This HTML 5 app requires Javascript to run. Please check that Javascript
+         is enabled in your browser.
+      </p>
+   </noscript>
+
+   <!-- Left Panel -->
+   <aside id="left-panel" class="left-panel">
+      <nav class="navbar navbar-expand-sm navbar-default">
+         <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+               <li>
+                  <a href="dashboard.html"> <i class="menu-icon ti-menu"></i>ОБРАТНО К ПАНЕЛИ</a>
+               </li>
+               <li class="selected-menu">
+                  <a href="dashboard-settings.html"> <i class="menu-icon ti-view-grid"></i>НАСТРОЙКА ПАНЕЛИ</a>
+               </li>
+               <li>
+                  <a href="store-settings.html"> <i class="menu-icon ti-home"></i>РЕСТОРАН </a>
+               </li>
+               <li>
+                  <a href="network-settings.html"> <i class="menu-icon ti-world"></i>СЕТЬ </a>
+               </li>
+               <li>
+                  <a href="detectors-settings.html"> <i class="menu-icon ti-settings"></i>ДАТЧИКИ</a>
+               </li>
+               <li>
+                  <a href="cardetectors-settings.html"><i class="menu-icon ti-car"></i>НАСТРОЙКИ ДЕТЕКТОРОВ МАШИН</a>
+               </li>
+               <li>
+                  <a href="reports-settings.html"> <i class="menu-icon ti-clipboard"></i>ОТЧЕТЫ</a>
+               </li>
+               <li>
+                  <a href="security-settings.html"> <i class="menu-icon ti-lock"></i>ЗАЩИТА </a>
+               </li>
+               <li>
+                  <a href="system-settings.html"> <i class="menu-icon ti-desktop"></i>СИСТЕМА </a>
+               </li>
+            </ul>
+         </div> <!-- /.navbar-collapse -->
+      </nav>
+   </aside><!-- /#left-panel -->
+
+
+
+   <!-- Right Panel -->
+   <div id="right-panel" class="right-panel">
+
+      <!-- Header-->
+      <header id="header" class="header">
+         <div class="header-menu">
+
+            <div class="col-sm-7">
+               <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+               <div class="header-left">
+                  <button class="search-trigger"><i class="fa fa-search"></i></button>
+                  <div class="form-inline">
+                     <form class="search-form">
+                        <input class="form-control mr-sm-2  import-usual-keyboard" type="text" placeholder="Поиск ..."
+                           aria-label="Search">
+                        <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-sm-5">
+               <div class="user-area dropdown float-right">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                     <div class="login-icon ti-user login_big_icon"></div>
+                     Вы вошли как:<div id="login_type"> менеджер </div>
+                  </a>
+
+                  <div class="user-menu dropdown-menu">
+                     <a class="nav-link" href="security-settings.html"><i class="fa fa-cog"></i> Поменять пароль </a>
+                     <a class="nav-link" href="security-settings.html"><i class="fa fa-power-off"></i> Выйти</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </header><!-- /header -->
+      <!-- Header-->
+
+      <div class="content mt-3">
+         <h1>НАСТРОЙКА ПАНЕЛИ </h1>
+         <br>
+         <div class="animated fadeIn">
+            <div class="card ">
+               <div class="card-body card-block">
+                  <form id="dashboard_form" action="" method="post" enctype="multipart/form-data"
+                     class="form-horizontal">
+                     <div class="row form-group">
+                        <div class="col col-lg-2"><label class=" form-control-label">Шаблон линии</label> </div>
+                        <div class="col col-md-3">
+                           <select name="select" id="select_laneconfig" class="form-control">
+                              <option value="1-lane">1 полоса</option>
+                              <option value="y-lane">Y-полоса</option>
+                              <option value="2-lane">2 полосы</option>
+                           </select>
+                        </div>
+                        <div class="col col-lg-2"><label class=" form-control-label">Шаблон панели</label> </div>
+                        <div class="col col-md-3">
+                           <select name="select" id="select_dashconfig" class="form-control">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                           </select>
+                        </div>
+                        <div class="col-12 col-lg-2"><button type="button" class="btn btn-primary"
+                              style="margin-left: 5px;" id="dasboard_config">Применить</button></div>
+                     </div>
+
+                     <div class="row form-group">
+                        <div class="col col-lg-3"><label class=" form-control-label">Отображать время дня</label></div>
+                        <div class="col-12 col-lg-4"><label class="switch switch-3d switch-info mr-3">
+                              <input type="checkbox" class="switch-input" id="show_daypart" checked="true"> <span
+                                 class="switch-label"></span>
+                              <span class="switch-handle"></span></label> <label class=" form-control-label">Да</label>
+                        </div>
+                        <div class="col col-lg-2"><label class=" form-control-label">Съезд</label></div>
+                        <div class="col-12 col-lg-2"><label class="switch switch-3d switch-info mr-3"><input
+                                 type="checkbox" class="switch-input" id="show_pulloff" checked="true"> <span
+                                 class="switch-label"></span>
+                              <span class="switch-handle"></span></label> <label class=" form-control-label">Да</label>
+                        </div>
+                     </div>
+                     <div class="row form-group">
+                        <div class="col col-lg-3"><label class=" form-control-label">Отображать номер смены</label>
+                        </div>
+                        <div class="col-12 col-lg-4"><label class="switch switch-3d switch-info mr-3"><input
+                                 type="checkbox" class="switch-input" id="show_dayshift" checked="true"> <span
+                                 class="switch-label"></span>
+                              <span class="switch-handle"></span></label> <label class="form-control-label">Да</label>
+                        </div>
+                        <div class="col col-lg-2"><label class=" form-control-label">Парковка для заказавших через
+                              приложение</label></div>
+                        <div class="col-12 col-lg-2"><label class="switch switch-3d switch-info mr-3"><input
+                                 type="checkbox" class="switch-input" id="show_mobilepickup" checked="true"> <span
+                                 class="switch-label"></span>
+                              <span class="switch-handle"></span></label> <label class=" form-control-label">Да</label>
+                        </div>
+                     </div>
+
+                     <div class="row form-group"> 
+                           <div class="col col-md-2"  id="num_mobilepickup"><label class=" form-control-label">Количество мест на mobile pick-up</label> </div>
+                           <div class="col col-md-2"  id="num_mobilepickup"><input type="number" id="storenumber-input"
+                                 name="storenumber-input" placeholder="3" class="form-control import-number-keyboard">
+                           </div>
+                           <div class="col-12 col-lg-2"  id="num_mobilepickup"><button type="button" class="btn btn-primary"
+                                 style="margin-left: 5px;" id="num_mobilepickup_submit">Применить</button></div> 
+
+                           <div class="col col-md-2" id="num_pulloff"><label class=" form-control-label">Количество мест на pull-off</label> </div>
+                           <div class="col col-md-2" id="num_pulloff"><input type="number" id="storenumber-input"
+                                 name="storenumber-input" placeholder="3" class="form-control import-number-keyboard">
+                           </div>
+                           <div class="col-12 col-lg-2" id="num_pulloff"><button type="button" class="btn btn-primary"
+                                 style="margin-left: 5px;" id="num_pulloff_submit">Применить</button></div>
+                      
+                     </div>
+
+                     <div class="dashboard_container">
+                        <div class="dashboard_set " role="tablist">
+                        </div>
+                     </div>
+
+                     <div class="tab-content pl-3 pt-2" id="dasboard_elements-content">
+                        <div class="tab-pane fade sectiontab" id="section1">
+                        </div>
+                        <div class="tab-pane fade sectiontab" id="section2">
+                        </div>
+                        <div class="tab-pane fade sectiontab" id="section3">
+                        </div>
+                        <div class="tab-pane fade sectiontab" id="section4">
+                        </div>
+                        <div class="tab-pane fade sectiontab" id="section5">
+                        </div>
+                        <div class="tab-pane fade sectiontab" id="section6">
+                        </div>
+                     </div>
+
+
+
+                  </form>
+               </div>
+               <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-sm">
+                     <i class="fa fa-dot-circle-o"></i> Сохранить настройки панели
+                  </button>
+                  <button type="reset" class="btn btn-danger btn-sm">
+                     <i class="fa fa-ban"></i> Сброс
+                  </button>
+               </div>
+            </div>
+
+         </div><!-- .animated -->
+      </div><!-- .content -->
+   </div><!-- /#right-panel -->
+   <!-- Right Panel -->
+
+
+   <!--hidden panel that is implemented in each section by js-->
+   <div class="card" id="section_setting_card">
+      <div class="card-header row form-group">
+         <div class="col col-md-2"><strong id="section_card_title">Секция №</strong> </div>
+         <div class="col-md-6"><input type="text" id="sectionname-input" name="sectionname-input" value="Название"
+               class="form-control import-usual-keyboard timegoals-form-input"> </div>
+      </div>
+      <div class="card-body card-block">
+         <form name="section1_form" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+            <div class="row form-group">
+               <div class="col col-md-3"><label class=" form-control-label">Тип ячейки</label>
+               </div>
+               <div class="col col-md-6">
+                  <select name="select" id="measure_type" class="form-control">
+                     <option value="time">Время</option>
+                     <option value="percent">% от норматива</option>
+                     <option value="carnum">Количество машин</option>
+                     <option value="leaderboard">Таблица лидеров</option>
+                     <option value="statistic">Статистика</option>
+                  </select>
+               </div>
+            </div>
+            <!-- 
+            <div class="row form-group"> 
+                  <div class="col col-md-3"><label class=" form-control-label">Название ячейки</label>  </div> 
+                  <div class="col col-md-6"><input type="text" id="storenumber-input" name="storenumber-input" placeholder="3" class="form-control import-usual-keyboard">   </div> 
+            </div>   -->
+            <div class="row form-group">
+               <div class="col col-md-3"><label class=" form-control-label">Отображать среднее</label></div>
+               <div class="col col-lg-2"><label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                        id="disp_average" class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                        class="switch-handle"></span></label> </div>
+               <div class="col col-md-2"><label id="avg_period_label" class=" form-control-label">Период</label></div>
+               <div class="col col-md-4">
+                  <select name="select" id="avg_period" class="form-control">
+                     <option value="halfhour">Полчаса</option>
+                     <option value="hour">Час</option>
+                     <option value="shift">Смена</option>
+                     <option value="daypart">Время дня</option>
+                     <option value="day">День</option>
+                  </select>
+               </div>
+            </div>
+
+            <div class="row form-group">
+               <div class="col col-md-3"><label class=" form-control-label">Отображать предыдущий результат</label></div>
+               <div class="col col-lg-2"><label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                        id="disp_prev" class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                        class="switch-handle"></span></label> </div>
+               <div class="col col-lg-2"><label id="prev_period_label" class=" form-control-label">Период</label></div>
+               <div class="col col-md-4">
+                  <select name="select" id="prev_period" class="form-control">
+                     <option value="halfhour">Полчаса</option>
+                     <option value="hour">Час</option>
+                     <option value="shift">Смена</option>
+                     <option value="daypart">Время дня</option>
+                     <option value="day">День</option>
+                  </select>
+               </div>
+            </div>
+            <div class="row form-group">
+               <div class="col col-md-3"><label class=" form-control-label">Отображать лучший результат</label></div>
+               <div class="col col-lg-2"><label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                        id="disp_best" class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                        class="switch-handle"></span></label> </div>
+               <div class="col col-lg-2"><label id="best_period_label"  class=" form-control-label">Период</label></div>
+               <div class="col col-md-4">
+                  <select name="select" id="best_period" class="form-control">
+                     <option value="halfhour">Полчаса</option>
+                     <option value="hour">Час</option>
+                     <option value="shift">Смена</option>
+                     <option value="daypart">Время дня</option>
+                     <option value="day">День</option>
+                  </select>
+               </div>
+            </div>
+            <div class="row form-group">
+
+               <div class="col col-md-3"><label class=" form-control-label">Отображать норматив</label></div>
+               <div class="col col-lg-2"><label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                        id="disp_goal" class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                        class="switch-handle"></span></label> </div>
+
+               <div class="col col-lg-2"><label class=" form-control-label">Отображать темп</label>
+               </div>
+               <div class="col col-lg-2"><label class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                        id="disp_pace" class="switch-input" checked="true"> <span class="switch-label"></span> <span
+                        class="switch-handle"></span></label> </div>
+            </div>
+         </form>
+      </div>
+      <div class="card-footer">
+         <button id="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> Сохранить настройки ячейки
+         </button>
+         <button id="reset" class="btn btn-danger btn-sm">
+            <i class="fa fa-ban"></i> Сброс
+         </button>
+      </div>
+   </div>
+
+   <script src="assets/js/dashboard_settings.js"></script>
+   <script src="vendors/jquery/dist/jquery.min.js"></script>
+   <script src="vendors/popper.js/dist/umd/popper.min.js"></script> <!-- for drop-down menus-->
+   <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/keyboard.js"></script>
+   <script type="text/javascript" src="assets/js/dashboard_handler.js"></script>
+</body>
+
+</html>

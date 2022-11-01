@@ -1,0 +1,12 @@
+{
+  "lane_type": "2-lane",
+  "disp_mobileparking": true,
+  "mobileparking_places": 3,
+  "disp_pull_forward": true,
+  "pull_forward_places": 2,
+  "show_dp": true,
+  "time_format24": true,
+  "max_queue_menu": 10,
+  "max_queue_serv": 10,
+  "max_queue_cash": 10
+}

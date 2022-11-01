@@ -1,0 +1,909 @@
+<!doctype html>
+<!--[if lt IE 7]>      
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
+        <![endif]-->
+<!--[if IE 7]>         
+        <html class="no-js lt-ie9 lt-ie8" lang="">
+            <![endif]-->
+<!--[if IE 8]>         
+            <html class="no-js lt-ie9" lang="">
+                <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>✨ Drive-through timer ✨</title>
+    <meta name="description" content="Drive-through timer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./lib/images/logo.jpg">
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/keyboardstyle.css">
+    <link rel="stylesheet" href="assets/css/dashboard_settings.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="dashboard.html"> <i class="menu-icon ti-menu"></i>ОБРАТНО К ПАНЕЛИ</a>
+                    </li>
+                    <li>
+                        <a href="dashboard-settings.html"> <i class="menu-icon ti-view-grid"></i>НАСТРОЙКА ПАНЕЛИ</a>
+                    </li>
+                    <li>
+                        <a href="store-settings.html"> <i class="menu-icon ti-home"></i>РЕСТОРАН </a>
+                    </li>
+                    <li>
+                        <a href="network-settings.html"> <i class="menu-icon ti-world"></i>СЕТЬ </a>
+                    </li>
+                    <li>
+                        <a href="detectors-settings.html"> <i class="menu-icon ti-settings"></i>ДАТЧИКИ</a>
+                    </li>
+                    <li>
+                        <a href="cardetectors-settings.html"><i class="menu-icon ti-car"></i>НАСТРОЙКИ ДЕТЕКТОРОВ МАШИН</a>
+                    </li>
+                    <li class="selected-menu">
+                        <a href="reports-settings.html"> <i class="menu-icon ti-clipboard"></i>ОТЧЕТЫ</a>
+                    </li>
+                    <li>
+                        <a href="security-settings.html"> <i class="menu-icon ti-lock"></i>ЗАЩИТА </a>
+                    </li>
+                    <li>
+                        <a href="system-settings.html"> <i class="menu-icon ti-desktop"></i>СИСТЕМА </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+
+
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2  import-usual-keyboard" type="text"
+                                    placeholder="Поиск ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true">
+                            <div class="login-icon ti-user login_big_icon"></div>
+                            Вы вошли как:<div id="login_type"> менеджер </div>
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="security-settings.html"><i class="fa fa-cog"></i> Поменять пароль
+                            </a>
+                            <a class="nav-link" href="security-settings.html"><i class="fa fa-power-off"></i> Выйти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+
+        <div class="content mt-3">
+            <h1>ОТЧЕТЫ </h1>
+            <br>
+            <div class="animated fadeIn">
+                <ul class="nav nav-tabs" id="networkTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="reportsummary-tab" data-toggle="tab" href="#reportsummary"
+                            role="tab" aria-controls="reportsummary" aria-selected="true">Итоговые данные</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reportrawdata-tab" data-toggle="tab" href="#reportrawdata" role="tab"
+                            aria-controls="reportrawdata" aria-selected="false">Исходные данные о машинах</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reporttrend-tab" data-toggle="tab" href="#reporttrend" role="tab"
+                            aria-controls="reporttrend" aria-selected="false">Тренды</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reportsettings-tab" data-toggle="tab" href="#reportsettings" role="tab"
+                            aria-controls="reportsettings" aria-selected="false">Данные настроек</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reportdataexport-tab" data-toggle="tab" href="#reportdataexport"
+                            role="tab" aria-controls="reportdataexport" aria-selected="false">Экспорт данных</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reportschedule-tab" data-toggle="tab" href="#reportschedule" role="tab"
+                            aria-controls="reportschedule" aria-selected="false">Планирование</a>
+                    </li>
+                </ul>
+                <div class="tab-content pl-3 p-1" id="networkTabContent">
+                    <div class="tab-pane fade show active" id="reportsummary" role="tabpanel"
+                        aria-labelledby="reportsummary-tab">
+                        <div class="card">
+                            <div class="card-body card-block">
+                                <div class="row ">
+                                    <div class="col col-md-3"><small for="startreport-input"
+                                            class=" form-control-label">Старт сбора данных</small></div>
+                                    <div class="col col-md-3"><small for="endreport-input"
+                                            class=" form-control-label">Конец сбора данных</small></div>
+                                </div>
+
+                                <div class="row ">
+                                    <div class="col col-md-3"><label id="startreport-input"
+                                            class=" form-control-label">01/01/1900 23:59</label></div>
+                                    <div class="col col-md-3"><label id="endreport-input"
+                                            class=" form-control-label">01/01/2022 23:59</label></div>
+                                </div>
+
+                                <form name="reportsummary_form" action="" method="post" enctype="multipart/form-data"
+                                    class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-6"><label for="storenumber-input"
+                                                class=" form-control-label">Фильтр</label></div>
+                                        <div class="col col-md-3"><label class=" form-control-label">Суммировать</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3">
+                                            <select name="select_typereport" id="select_typereport"
+                                                class="form-control">
+                                                <option value="0">Час</option>
+                                                <option value="1">Время дня</option>
+                                                <option value="2">Смена</option>
+                                                <option value="3">День</option>
+                                                <option value="4">Неделя</option>
+                                                <option value="5">Месяц</option>
+                                                <option value="6">Год</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <select name="select_periodreport" id="select_periodreport"
+                                                class="form-control">
+                                                <script>
+                                                    let tmpdate = "";
+                                                    let multopt = document
+                                                    for (let i = 0; i < 24; i++) {
+                                                        tmpdate = i + ":00";
+                                                        let newopt = document.createElement("option");
+                                                        newopt.value = tmpdate;
+                                                        newopt.innerText = tmpdate;
+                                                        select_periodreport.append(newopt);
+                                                    }
+                                                </script>
+                                            </select>
+                                        </div>
+
+                                        <div class="col col-md-6">
+                                            <div class="form-check-inline form-check">
+                                                <label for="summarizereport-radio1" class="form-check-label ">
+                                                    <input type="radio" id="summarizereport-radio1"
+                                                        name="summarizereport-radio1" value="false"
+                                                        class="form-check-input">Нет
+                                                </label>
+                                                <label for="summarizereport-radio2" class="form-check-label ">
+                                                    <input type="radio" id="summarizereport-radio2"
+                                                        name="summarizereport-radio2" value="true"
+                                                        class="form-check-input" style="margin-left: 10px;">Да
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Начало</label>
+                                        </div>
+                                        <div class="col col-md-3"><label class=" form-control-label">Конец</label></div>
+                                        <div class="col col-md-3"><label class=" form-control-label">Формат</label>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3"><input type="date" autocomplete="on"
+                                                id="start-input" name="start-input" placeholder="01/01/1900"
+                                                class="form-control import-usual-keyboard"></div>
+                                        <div class="col-12 col-md-3"><input type="date" autocomplete="on" id="end-input"
+                                                name="end-input" placeholder="12/12/2022"
+                                                class="form-control import-usual-keyboard"></div>
+
+                                        <div class="col col-md-6">
+                                            <div class="form-check-inline form-check">
+                                                <label class="form-check-label ">
+                                                    <input type="radio" id="outputformat-radio1"
+                                                        name="outputformat-radio1" value="pdf"
+                                                        class="form-check-input">PDF
+                                                </label>
+                                                <label class="form-check-label ">
+                                                    <input type="radio" id="outputformat-radio2"
+                                                        name="outputformat-radio2" value="csv" class="form-check-input"
+                                                        style="margin-left: 10px;">CSV
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm" id="reportsummary-button">
+                                    <i class="fa fa-dot-circle-o"></i> Открыть отчет
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="reportrawdata" role="tabpanel" aria-labelledby="reportrawdata-tab">
+                        <div class="card">
+                            <div class="card-body card-block">
+                                <form name="reportrawdata_form" action="" method="post" enctype="multipart/form-data"
+                                    class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-lg-2"><label class=" form-control-label">Использовать
+                                                облако</label></div>
+                                        <div class="col-12 col-lg-2"><label
+                                                class="switch switch-3d switch-info mr-3"><input type="checkbox"
+                                                    class="switch-input" id="usecloud-input" checked="true"> <span
+                                                    class="switch-label"></span> <span
+                                                    class="switch-handle"></span></label> <label for="usecloud-input"
+                                                class=" form-control-label">Да</label> </div>
+
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Email адрес
+                                                аккаунта</label>
+                                            <small class="col help-block  connected-status" data-connected="true">Вход
+                                                выполнен</small>
+                                        </div>
+                                        <div class="col col-md-6"><input type="text" id="accountemail-input"
+                                                name="timeserver-input" disabled="" value="sample@gmail.com"
+                                                class="form-control import-usual-keyboard"> </div>
+                                        <div class="col col-md-3"><button type="button" class="btn btn-primary"
+                                                style="margin-left: 30px;" id="accountemail_logout">Выход из
+                                                аккаунта</button></div>
+                                    </div>
+
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"> <strong>Статус соединения <small
+                                                    class="col help-block  connected-status"
+                                                    data-connected="true">Соединено</small> </strong> </div>
+                                        <div class="col col-lg-2"> <button type="button" class="btn btn-primary"
+                                                style="margin-left: 30px;" id="refresh_connection">Обновить</button>
+                                        </div>
+                                        <div class="col col-lg-2"> <button type="button" class="btn btn-secondary"
+                                                style="margin-left: 30px;" id="check_connection">Проверка
+                                                соединения</button></div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Сохранить
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Сброс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="reporttrend" role="tabpanel" aria-labelledby="reporttrend-tab">
+                        <p>В разработке.</p>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="reportsettings" role="tabpanel" aria-labelledby="reportsettings-tab">
+                        <div class="card">
+                            <div class="card-body card-block">
+                                <div class="row ">
+                                    <div class="col col-md-3"><small for="startreport-input"
+                                            class=" form-control-label">Старт сбора данных</small></div>
+                                    <div class="col col-md-3"><small for="endreport-input"
+                                            class=" form-control-label">Конец сбора данных</small></div>
+                                </div>
+
+                                <div class="row ">
+                                    <div class="col col-md-3"><label id="startreport-input"
+                                            class=" form-control-label">01/01/1900 23:59</label></div>
+                                    <div class="col col-md-3"><label id="endreport-input"
+                                            class=" form-control-label">01/01/2022 23:59</label></div>
+                                </div>
+                                </br>
+
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-lg-2"><label class=" form-control-label">Формат</label>
+                                        </div>
+                                        <div class="form-check-inline form-check">
+                                            <label for="timeformat-radio1" class="form-check-label ">
+                                                <input type="radio" id="outputformat-radio1" name="timeformat-radios"
+                                                    value="12" class="form-check-input">PDF
+                                            </label>
+                                            <label for="timeformat-radio2" class="form-check-label ">
+                                                <input type="radio" id="outputformat-radio2" name="timeformat-radios"
+                                                    value="24" class="form-check-input" style="margin-left: 10px;">CSV
+                                            </label>
+                                        </div>
+                                    </div>
+                            </div>
+                            </form>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Сохранить
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Сброс
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="reportdataexport" role="tabpanel"
+                        aria-labelledby="reportdataexport-tab">
+                        <div class="card">
+                            <div class="card-body card-block">
+                                <div class="row form-group">
+                                    <div class="col col-lg-2"><label for="usecloud-input"
+                                            class=" form-control-label">Экспортировать данные</label></div>
+                                    <div class="col-12 col-lg-2"><label class="switch switch-3d switch-info mr-3"><input
+                                                type="checkbox" class="switch-input" id="exportdata-input"
+                                                checked="true"> <span class="switch-label"></span> <span
+                                                class="switch-handle"></span></label>
+                                        <label for="usecloud-input" class=" form-control-label">Да</label>
+                                    </div>
+
+                                </div>
+
+
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Путь к
+                                                файлу</label></div>
+                                        <div class="col-12 col-md-6"><input type="text" id="filepath-input"
+                                                name="filepath-input" value="\\MainServer\input\timer"
+                                                class="form-control import-number-keyboard">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Имя
+                                                пользователя</label></div>
+                                        <div class="col-12 col-md-6"><input type="text" id="username-input"
+                                                name="username-input" value="DataExp_username"
+                                                class="form-control import-number-keyboard">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Имя файла</label>
+                                        </div>
+                                        <div class="col-12 col-md-6"><input type="text" id="filename-input"
+                                                name="filename-input" value="Timer_data.csv"
+                                                class="form-control import-number-keyboard">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label for="ipaddress-input"
+                                                class=" form-control-label">Разделители</label></div>
+                                        <div class="col-12 col-md-3">
+                                            <select name="select" id="select_typereport" class="form-control">
+                                                <option value="0">запятая</option>
+                                                <option value="1">2</option>
+                                                <option value="2">3</option>
+                                                <option value="3">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><label class=" form-control-label">Формат даты и
+                                                времени</label></div>
+                                        <div class="col-12 col-md-3">
+                                            <select name="select" id="select_typereport" class="form-control">
+                                                <option value="0">1</option>
+                                                <option value="1">2</option>
+                                                <option value="2">3</option>
+                                                <option value="3">4</option>
+                                                <option value="4">5</option>
+                                                <option value="5">6</option>
+                                                <option value="6">7</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <select name="select" id="select_periodreport" class="form-control">
+                                                <option value="0">1</option>
+                                                <option value="1">2</option>
+                                                <option value="2">3</option>
+                                                <option value="3">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Сохранить
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-ban"></i> Сброс
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="reportschedule" role="tabpanel" aria-labelledby="reportschedule-tab">
+                        <p>В разработке.</p>
+                    </div>
+                </div>
+
+                <!-- /# </div>-->
+            </div>
+            <!-- /# column  -->
+        </div>
+
+        <div id="tabletemplate" class="card" >
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <button class="btn btn-secondary btn-sm" style="z-index: 999" id="reportsummary-exportpdf"
+                        onclick="exportPDF('content2')">
+                        <i class="menu-icon ti-cloud-down"></i> Сохранить в формате PDF
+                    </button>
+                </div>
+                <div class="col col-md-3">
+                    <button class="btn btn-secondary btn-sm" style="z-index: 999" id="reportsummary-exportxls"
+                        onclick="exportCSV('bootstrap-data-table-export');">
+                        <i class="menu-icon ti-cloud-down"></i> Сохранить в формате CSV
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card-header">
+                <strong class="card-title"> Data Table</strong>
+
+                <button type="button" class="close" data-dismiss="alert" style="z-index: 999" aria-label="Close" onclick=" closetable(); ">
+                    <span  >×</span>
+                </button>
+            </div>
+
+            <div class="card-body" id="content2">
+                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                    <!--  <thead>
+                       
+                        <tr>
+                            <th>CarID</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Salary</th>
+                        </tr>  
+                    </thead>
+                    <tbody>
+
+                         
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>$320,800</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>$86,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>$433,060</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>$162,700</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>$327,900</td>
+                        </tr>
+                        <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>$205,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>$103,600</td>
+                        </tr>
+                        <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>$90,560</td>
+                        </tr>
+                        <tr>
+                            <td>Quinn Flynn</td>
+                            <td>Support Lead</td>
+                            <td>Edinburgh</td>
+                            <td>$342,000</td>
+                        </tr>
+                        <tr>
+                            <td>Charde Marshall</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>$470,600</td>
+                        </tr>
+                        <tr>
+                            <td>Haley Kennedy</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>$313,500</td>
+                        </tr>
+                        <tr>
+                            <td>Tatyana Fitzpatrick</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>$385,750</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Silva</td>
+                            <td>Marketing Designer</td>
+                            <td>London</td>
+                            <td>$198,500</td>
+                        </tr>
+                        <tr>
+                            <td>Paul Byrd</td>
+                            <td>Chief Financial Officer (CFO)</td>
+                            <td>New York</td>
+                            <td>$725,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gloria Little</td>
+                            <td>Systems Administrator</td>
+                            <td>New York</td>
+                            <td>$237,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bradley Greer</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>$132,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dai Rios</td>
+                            <td>Personnel Lead</td>
+                            <td>Edinburgh</td>
+                            <td>$217,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jenette Caldwell</td>
+                            <td>Development Lead</td>
+                            <td>New York</td>
+                            <td>$345,000</td>
+                        </tr>
+                        <tr>
+                            <td>Yuri Berry</td>
+                            <td>Chief Marketing Officer (CMO)</td>
+                            <td>New York</td>
+                            <td>$675,000</td>
+                        </tr>
+                        <tr>
+                            <td>Caesar Vance</td>
+                            <td>Pre-Sales Support</td>
+                            <td>New York</td>
+                            <td>$106,450</td>
+                        </tr>
+                        <tr>
+                            <td>Doris Wilder</td>
+                            <td>Sales Assistant</td>
+                            <td>Sidney</td>
+                            <td>$85,600</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Ramos</td>
+                            <td>Chief Executive Officer (CEO)</td>
+                            <td>London</td>
+                            <td>$1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Joyce</td>
+                            <td>Developer</td>
+                            <td>Edinburgh</td>
+                            <td>$92,575</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Chang</td>
+                            <td>Regional Director</td>
+                            <td>Singapore</td>
+                            <td>$357,650</td>
+                        </tr>
+                        <tr>
+                            <td>Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>$206,850</td>
+                        </tr>
+                        <tr>
+                            <td>Fiona Green</td>
+                            <td>Chief Operating Officer (COO)</td>
+                            <td>San Francisco</td>
+                            <td>$850,000</td>
+                        </tr>
+                        <tr>
+                            <td>Shou Itou</td>
+                            <td>Regional Marketing</td>
+                            <td>Tokyo</td>
+                            <td>$163,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michelle House</td>
+                            <td>Integration Specialist</td>
+                            <td>Sidney</td>
+                            <td>$95,400</td>
+                        </tr>
+                        <tr>
+                            <td>Suki Burks</td>
+                            <td>Developer</td>
+                            <td>London</td>
+                            <td>$114,500</td>
+                        </tr>
+                        <tr>
+                            <td>Prescott Bartlett</td>
+                            <td>Technical Author</td>
+                            <td>London</td>
+                            <td>$145,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Cortez</td>
+                            <td>Team Leader</td>
+                            <td>San Francisco</td>
+                            <td>$235,500</td>
+                        </tr>
+                        <tr>
+                            <td>Martena Mccray</td>
+                            <td>Post-Sales support</td>
+                            <td>Edinburgh</td>
+                            <td>$324,050</td>
+                        </tr>
+                        <tr>
+                            <td>Unity Butler</td>
+                            <td>Marketing Designer</td>
+                            <td>San Francisco</td>
+                            <td>$85,675</td>
+                        </tr>
+                        <tr>
+                            <td>Howard Hatfield</td>
+                            <td>Office Manager</td>
+                            <td>San Francisco</td>
+                            <td>$164,500</td>
+                        </tr>
+                        <tr>
+                            <td>Hope Fuentes</td>
+                            <td>Secretary</td>
+                            <td>San Francisco</td>
+                            <td>$109,850</td>
+                        </tr>
+                        <tr>
+                            <td>Vivian Harrell</td>
+                            <td>Financial Controller</td>
+                            <td>San Francisco</td>
+                            <td>$452,500</td>
+                        </tr>
+                        <tr>
+                            <td>Timothy Mooney</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>$136,200</td>
+                        </tr>
+                        <tr>
+                            <td>Jackson Bradshaw</td>
+                            <td>Director</td>
+                            <td>New York</td>
+                            <td>$645,750</td>
+                        </tr>
+                        <tr>
+                            <td>Olivia Liang</td>
+                            <td>Support Engineer</td>
+                            <td>Singapore</td>
+                            <td>$234,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bruno Nash</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>$163,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sakura Yamamoto</td>
+                            <td>Support Engineer</td>
+                            <td>Tokyo</td>
+                            <td>$139,575</td>
+                        </tr>
+                        <tr>
+                            <td>Thor Walton</td>
+                            <td>Developer</td>
+                            <td>New York</td>
+                            <td>$98,540</td>
+                        </tr>
+                        <tr>
+                            <td>Finn Camacho</td>
+                            <td>Support Engineer</td>
+                            <td>San Francisco</td>
+                            <td>$87,500</td>
+                        </tr>
+                        <tr>
+                            <td>Serge Baldwin</td>
+                            <td>Data Coordinator</td>
+                            <td>Singapore</td>
+                            <td>$138,575</td>
+                        </tr>
+                        <tr>
+                            <td>Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td>$125,250</td>
+                        </tr>
+                        <tr>
+                            <td>Zorita Serrano</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>$115,000</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Acosta</td>
+                            <td>Junior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>$75,650</td>
+                        </tr>
+                        <tr>
+                            <td>Cara Stevens</td>
+                            <td>Sales Assistant</td>
+                            <td>New York</td>
+                            <td>$145,600</td>
+                        </tr>
+                        <tr>
+                            <td>Hermione Butler</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>$356,250</td>
+                        </tr>
+                        <tr>
+                            <td>Lael Greer</td>
+                            <td>Systems Administrator</td>
+                            <td>London</td>
+                            <td>$103,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jonas Alexander</td>
+                            <td>Developer</td>
+                            <td>San Francisco</td>
+                            <td>$86,500</td>
+                        </tr>
+                        <tr>
+                            <td>Shad Decker</td>
+                            <td>Regional Director</td>
+                            <td>Edinburgh</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Bruce</td>
+                            <td>Javascript Developer</td>
+                            <td>Singapore</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Snider</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
+                            <td>$112,000</td>
+                        </tr>
+                    </tbody>
+                    -->
+
+                </table>
+            </div>
+
+        </div>
+
+        <!-- .animated -->
+    </div>
+
+
+
+    <!-- .content -->
+    </div><!-- /#right-panel -->
+    <!-- Right Panel -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/keyboard.js"></script>
+    <script src="assets/js/reports_handler.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+
+
+</body>
+
+</html>

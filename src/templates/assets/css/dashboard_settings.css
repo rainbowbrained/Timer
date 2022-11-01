@@ -1,0 +1,238 @@
+.dashboard_container {
+    width:85%; 
+    margin-right: auto;
+    margin-left: auto;
+    height: 500px;
+    border: 1px solid #272c33;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(4, auto);
+    align-items: stretch;
+    gap: 5px;  
+    padding: 5px;
+}
+ 
+.dashboard_set {  
+    z-index: 0;
+    position: relative;
+    width:80%;
+    height: 350px; 
+    grid-column: 5 / span 13;
+    grid-row: 5 / span 2;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(6, auto);
+    align-items: stretch;
+    gap: 5px;  
+  } 
+  .dashelement_set { 
+    background-color: rgba(26, 10, 60);
+    border: orange 2px solid;
+    border-radius: 8px;
+    padding: 5px; 
+    color: rgb(238, 238, 236); 
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+  } 
+ 
+  .dashelement_set:hover { 
+    background-color: rgb(65, 28, 145);
+  }  
+  .dashelement_set:active { 
+    background-color: rgb(236, 227, 255);
+    color: black;
+    border: rgba(26, 10, 60) 3px solid;
+  }
+
+  /* sections */ 
+  .element_measure_set  {
+    font-size: 5vh;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1px;
+    color: green; 
+  }  
+  
+  .undermeasure_set {
+    font-size: 2vh;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center; 
+  }
+  
+  .undermeasure_val_set {
+    font-weight: bold;
+  }
+    
+  
+  .timertitle_set  {
+    font-size: 2.5vh;   
+  } 
+ 
+  
+  .wait_area_set { 
+    height: 90%;
+    grid-column: 2 / span 3; 
+    display: grid; 
+    align-items: stretch;
+    background-color: rgb(187, 184, 184); 
+    gap: 2px;
+    justify-items: stretch;
+    left: 5px;
+    right: 5px;
+    border: black;
+  }
+  .wait_area_item_set  {  
+    position: relative;  
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    border-top: 3px solid rgb(240, 239, 239);
+    border-left: 3px solid rgb(240, 239, 239);
+    border-bottom:  3px solid rgb(240, 239, 239);
+    text-align: center;
+  } 
+  
+   
+
+  
+  
+  .road_right_set  { 
+    position: relative;
+    border-radius:10px ;
+    width:40px; 
+    height: 100%; 
+    background-color:  rgb(187, 184, 184);
+    grid-column: 17 / span 1;
+    grid-row: 2 / span 6;
+  }
+  .road_right_set_2{ 
+    grid-column: 16 / span 1; 
+    grid-row: 3 / span 5;
+  }
+  .road_right_set_y{ 
+    grid-column: 16 / span 1; 
+    grid-row: 2 / span 6;
+  }
+  .road_top_set  { 
+    position: relative;
+    border-radius: 10px;
+    height:40px; 
+    width: 97%; 
+    background-color: rgb(187, 184, 184);
+    grid-column: 2/ span 16;
+    grid-row: 2 / span 1;
+  }
+  .road_top_set_2 {  
+    grid-column: 2/ span 15;
+    grid-row: 3 / span 1;
+  }
+ 
+
+  .roadwindow {
+    z-index: -1;
+    border-style: solid;
+    border-color: yellow;
+    width: 60px;
+    height: 36px;
+    border-width: 1px;
+    position: fixed;
+    background-color: dimgray;
+  } 
+  
+  .roadmenu { 
+    width: 36px;
+    height: 60px;
+    bottom: 50%  ; 
+    right: 70px;    
+  }
+  .roadmenu_2 { 
+    width: 36px;
+    height: 60px;
+    bottom: 50%  ; 
+    right: 200px;    
+  }
+  .roadcash { 
+    top: 130px;  
+    left: 50%;    
+  }
+  .roadserv { 
+    top: 130px;  
+    left: 15%;    
+  } 
+  
+  .roadcash_2 { 
+    top: 230px;  
+    left: 50%;    
+  }
+  .roadserv_2 { 
+    top: 230px;  
+    left: 15%;    
+  } 
+  
+  .roadnames { 
+    top: 170px;   
+    font-size:12px;
+    font-family:"Courier New", Courier, monospace;
+    text-align:center;  
+    color : rgb(238, 238, 236);
+    position: fixed; 
+  } 
+  
+  .roadmenuname {
+    top: 40%;
+    right: 110px;
+    writing-mode: vertical-lr;
+  }
+  .roadmenuname_2 {
+    top: 40%;
+    right: 240px;
+    writing-mode: vertical-lr;
+  }
+  .roadcashname {
+    left: 50%;
+  }
+  .roadservname {
+    left: 15%;
+  }
+  .roadcashname_2 {
+    top: 270px;   
+    left: 50%;
+  }
+  .roadservname_2 {
+    top: 270px;   
+    left: 15%;
+  }
+  
+  .innerroad { 
+    z-index: -1;
+    border-radius: 0px 80px 0px 0px;
+    position: fixed;  
+    border-style: dashed dashed none none;   
+    border-color: yellow;
+    border-width: 1px;  
+    left: 0;
+    right: 88px;  
+    top: 148px; 
+    bottom: 0;
+  } 
+  
+  .innerroad_y {  
+    left: 80%;
+    right: 218px;   
+    top: 148px; 
+  }  
+  
+  .innerroad_2 {  
+    right: 218px;  
+    top: 248px;  
+  } 
+   
+  .sectiontab {
+    display: none;
+  }
+  
+
+  #section_setting_card {
+    display: none; 
+  }

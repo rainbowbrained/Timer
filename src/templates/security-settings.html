@@ -1,0 +1,349 @@
+<!doctype html>
+<!--[if lt IE 7]>      
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
+        <![endif]-->
+<!--[if IE 7]>         
+        <html class="no-js lt-ie9 lt-ie8" lang="">
+            <![endif]-->
+<!--[if IE 8]>         
+            <html class="no-js lt-ie9" lang="">
+                <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>✨ Drive-through timer ✨</title>
+   <meta name="description" content="Drive-through timer">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href="./lib/images/logo.jpg"> 
+
+   <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css"> 
+   <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/keyboardstyle.css">
+   <link rel="stylesheet" href="assets/css/dashboard_settings.css"> 
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'> 
+    
+    
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="dashboard.html"> <i class="menu-icon ti-menu"></i>ОБРАТНО К ПАНЕЛИ</a>
+                    </li>
+                    <li>
+                        <a href="dashboard-settings.html"> <i class="menu-icon ti-view-grid"></i>НАСТРОЙКА ПАНЕЛИ</a>
+                    </li>
+                    <li>
+                        <a href="store-settings.html"> <i class="menu-icon ti-home"></i>РЕСТОРАН </a>
+                    </li>
+                    <li>
+                        <a href="network-settings.html"> <i class="menu-icon ti-world"></i>СЕТЬ </a>
+                    </li>
+                    <li>
+                        <a href="detectors-settings.html"> <i class="menu-icon ti-settings"></i>ДАТЧИКИ</a>
+                    </li>
+                    <li>
+                        <a href="cardetectors-settings.html"><i class="menu-icon ti-car"></i>НАСТРОЙКИ ДЕТЕКТОРОВ
+                            МАШИН</a>
+                    </li>
+                    <li>
+                        <a href="reports-settings.html"> <i class="menu-icon ti-clipboard"></i>ОТЧЕТЫ</a>
+                    </li>
+                    <li class="selected-menu">
+                        <a href="security-settings.html"> <i class="menu-icon ti-lock"></i>ЗАЩИТА </a>
+                    </li>
+                    <li>
+                        <a href="system-settings.html"> <i class="menu-icon ti-desktop"></i>СИСТЕМА </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Right Panel -->
+
+
+    <div id="right-panel" class="right-panel">
+        
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2  import-usual-keyboard" type="text"
+                                    placeholder="Поиск ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true">
+                            <div class="login-icon ti-user login_big_icon"></div>
+                            Вы вошли как:<div id="login_type"> менеджер </div>
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="security-settings.html"><i class="fa fa-cog"></i> Поменять пароль
+                            </a>
+                            <a class="nav-link" href="security-settings.html"><i class="fa fa-power-off"></i> Выйти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+        
+        <div class="content mt-3">
+            <h1>ЗАЩИТА </h1>
+            <br>
+            <div class="animated fadeIn">
+                <ul class="nav nav-tabs" id="securityTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="securitylogin-tab" data-toggle="tab" href="#securitylogin"
+                            role="tab" aria-controls="securitylogin" aria-selected="true">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="securitypasswords-tab" data-toggle="tab" href="#securitypasswords"
+                            role="tab" aria-controls="securitypasswords" aria-selected="false">Смена паролей</a>
+                    </li>
+                </ul>
+                <div class="tab-content pl-3 p-1" id="securityTabContent">
+
+                    <div class="tab-pane fade show active" id="securitylogin" role="tabpanel"
+                        aria-labelledby="securitylogin-tab">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-top: 10px;;">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="login-dashboard-tab" data-toggle="pill"
+                                    href="#login-dashboard-tab-content" role="tab" aria-controls="login-dashboard-tab"
+                                    aria-selected="true">
+                                    <div class="login-icon login_big_icon ti-view-grid"></div> Доступ к панели
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="login-report-tab" data-toggle="pill"
+                                    href="#login-report-tab-content" role="tab" aria-controls="login-report-tab"
+                                    aria-selected="false">
+                                    <div class="login-icon login_big_icon ti-clipboard"></div>Доступ к отчетам
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="login-manager-tab" data-toggle="pill"
+                                    href="#login-manager-tab-content" role="tab" aria-controls="login-manager-tab"
+                                    aria-selected="false">
+                                    <div class="login-icon login_big_icon ti-user"></div>Менеджер
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="login-installer-tab" data-toggle="pill"
+                                    href="#login-installer-tab-content" role="tab" aria-controls="login-installer-tab"
+                                    aria-selected="false">
+                                    <div class="login-icon login_big_icon ti-settings"></div>Установщик
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content pl-3 pt-2" id="timegoalsdays-tab">
+                            <div class="tab-pane fade show active" id="login-dashboard-tab-content" role="tabpanel"
+                                aria-labelledby="login-dashboard-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard"
+                                            placeholder="Пароль для доступа к панели"></div>
+                                    <div class="col col-md-3"> <button type="submit"
+                                            class="btn btn-primary">Войти</button> </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить меня
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade " id="login-report-tab-content" role="tabpanel"
+                                aria-labelledby="login-report-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard"
+                                            placeholder="Пароль для доступа к отчетам"></div>
+                                    <div class="col col-md-3"> <button type="submit"
+                                            class="btn btn-primary">Войти</button>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить меня
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade " id="login-manager-tab-content" role="tabpanel"
+                                aria-labelledby="login-manager-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Пароль менеджера">
+                                    </div>
+                                    <div class="col col-md-3"> <button type="submit"
+                                            class="btn btn-primary">Войти</button>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить меня
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade " id="login-installer-tab-content" role="tabpanel"
+                                aria-labelledby="login-installer-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Пароль установщика">
+                                    </div>
+                                    <div class="col col-md-3"> <button type="submit"
+                                            class="btn btn-primary">Войти</button>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Запомнить меня
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="securitypasswords" role="tabpanel"
+                        aria-labelledby="securitypasswords-tab">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-top: 10px;;">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="password-dashboard-tab" data-toggle="pill"
+                                    href="#password-dashboard-tab-content" role="tab"
+                                    aria-controls="password-dashboard-tab" aria-selected="true">
+                                    <div class="login-icon login_big_icon ti-view-grid"></div> Пароль для доступа к панели
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="password-report-tab" data-toggle="pill"
+                                    href="#password-report-tab-content" role="tab" aria-controls="password-report-tab"
+                                    aria-selected="false">
+                                    <div class="login-icon login_big_icon ti-clipboard"></div>Пароль для доступа к отчетам
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="password-manager-tab" data-toggle="pill"
+                                    href="#password-manager-tab-content" role="tab" aria-controls="password-manager-tab"
+                                    aria-selected="false">
+                                    <div class="login-icon login_big_icon ti-user"></div>Пароль для менеджеров
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content pl-3 pt-2" id="timegoalsdays-tab">
+                            <div class="tab-pane fade show active" id="password-dashboard-tab-content" role="tabpanel"
+                                aria-labelledby="password-dashboard-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-6"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Старый пароль">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-6"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Новый пароль"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard"
+                                            placeholder="Пароль установщика для подтверждения"></div>
+                                    <div class="col col-md-2"> <button type="submit"
+                                            class="btn btn-primary">Ввести</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade " id="password-report-tab-content" role="tabpanel"
+                                aria-labelledby="password-report-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-6"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Старый пароль">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-6"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Новый пароль"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard"
+                                            placeholder="Пароль установщика для подтверждения"></div>
+                                    <div class="col col-md-2"> <button type="submit"
+                                            class="btn btn-primary">Ввести</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade " id="password-manager-tab-content" role="tabpanel"
+                                aria-labelledby="password-manager-tab">
+                                <div class="row form-group">
+                                    <div class="col col-md-6"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Старый пароль">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-6"><input type="password"
+                                            class="form-control import-usual-keyboard" placeholder="Новый пароль"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-4"><input type="password"
+                                            class="form-control import-usual-keyboard"
+                                            placeholder="Пароль установщика для подтверждения"></div>
+                                    <div class="col col-md-2"> <button type="submit"
+                                            class="btn btn-primary">Ввести</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /# </div>-->
+            </div>
+            <!-- /# column  -->
+        </div>
+        <!-- .animated -->
+    </div>
+    <!-- .content -->
+    </div><!-- /#right-panel -->
+    <!-- Right Panel   --> 
+    <script src="assets/js/dashboard_settings.js"></script> 
+    <script src="vendors/jquery/dist/jquery.min.js"></script> 
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>   <!-- for drop-down menus-->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/keyboard.js"></script>
+    <script type="text/javascript" src="lib/dashboard_handler.js"></script> 
+
+</body>
+
+</html>
