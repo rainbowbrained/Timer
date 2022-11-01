@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" /><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>✨ Drive-through timer ✨</title>
+  <meta name="description" content="Drive-through timer">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="shortcut icon" href="./lib/images/logo.jpg">  
+
+  <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard_style.css" /> 
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+  <!-- Display this message if Javascript is disabled -->
+  <noscript>
+    <h2>Enable Javascript!</h2>
+    <p>
+      This HTML 5 app requires Javascript to run. Please check that Javascript
+      is enabled in your browser.
+    </p>
+  </noscript>
+  
+  <a href="dashboard-settings.html" onclick="save_cars_data()"> <i class="menu-icon ti-menu dashb_icon"></i></a> 
+  <div id="curdate"></div>
+  <div id="curweekday"></div>
+  <div id="curtime"></div>
+  <div id="curdaypart">Смена</div>
+  <div id="curshift">Время дня</div>
+  <div id="logo_spark"></div> 
+
+  <div class="dashboard"></div>
+
+  <!-- temporary buttons to test dashboard functionality -->
+  <div class="tmp_buttons">
+    <button onclick="car_arrived()">car arrived</button>
+    <button onclick="car_isordering(1)">car_isordering</button>
+    <button onclick="car_ordered(1)">car ordered</button>
+    <button onclick="car_ispaying(3)">car_ispaying</button>
+    <button onclick="car_payed(3)">car payed</button>
+    <button onclick="car_inservice(5)">car_inservice</button>
+    <button onclick="car_depart(5)">car_depart</button>
+    <button onclick="car_onpullof()">onpullof</button>
+  </div> 
+
+  <div id="currentcars"></div>
+  <div id="mytblbody"></div>
+
+
+
+  <script src="vendors/jquery/dist/jquery.min.js"></script> 
+  <script src="assets/js/main.js"></script> 
+ 
+  <script type="text/javascript" src="assets/js/dashboard_handler.js"> </script>
+  <script type="text/javascript" src="assets/js/script_cars.js"></script>
+  <script> 
+    set_curweekday();
+    set_curdate(); 
+    start_curtime();
+    generate_dashboard(dashboard_config);
+    generate_dashboard_elements(dashboard_settings);  
+    var h = window.innerHeight;
+    document.body.style.height = h + 'px';
+  </script>
+</body>
+
+</html>
