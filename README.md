@@ -19,6 +19,12 @@ Electron-based gamification  system for drive-trhough restaurants to improve per
 - :car: Changing colors depending on goals!
 - :sparkles: Friendly UI & UX and Has nice looking window. 
 
+## Usage 
+- Clone the project from this repo to your local machine: run `git clone https://github.com/rainbowbrained/Timer` 
+- Open terminal and `cd` into the cloned folder, usually `cd Timer`. 
+- Run `npm install` to install dependencies, or run `npm install --include=dev` to install dev dependencies. Now it's ready to use for development.
+- Run `npm run start` to run the app as desktop app.  
+
 
 ## Screenshots
 <p align="center">
