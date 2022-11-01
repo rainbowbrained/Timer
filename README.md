@@ -11,7 +11,7 @@ Electron-based gamification  system for drive-trhough restaurants to improve per
 
 ## Features
 - :cloud: Getting data about cars from MQTT server.
-- :file: Storing dashboard configuration and data locally in MySQL database.
+- 📂 Storing dashboard configuration and data locally in MySQL database.
 - :key: HTML templates for settings.
 - :keyboard: Convenient onscreen keyboard.
 - :bookmark_tabs: Reports for cars, settings and trends.
@@ -26,7 +26,7 @@ Electron-based gamification  system for drive-trhough restaurants to improve per
 - Run `npm run start` to run the app as desktop app.   
 - Run `npm run package` to bundle your app code together with the Electron binary.  
 - Run `npm run make` to create a distributable. This script runs `electron-forge package` automatically, and then uses  packaged app folder to create a separate distributable for each configured maker.   
-After the script runs, you should see an **out** folder containing both the distributable (**out/make/...**) and a folder containing the packaged application code (**out/timer3-linux-x64** or similar). [See more here]( https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging)  
+After the script runs, you should see an **out** folder containing both the distributable (**out/make/...**) and a folder containing the packaged application code (**out/timer3-linux-x64** or similar). [See more here]( https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging).  
  
 ### Project sructure 
 
@@ -102,19 +102,16 @@ After the script runs, you should see an **out** folder containing both the dist
   <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/dashboard.jpg?raw=true" />
 </p>
 
+# Examples of keyboard usage. Each type of keyboard appears depending on the type of input field. 
 <p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/keyboard1.jpg?raw=true" />
-</p>
-
-<p align="center">
+  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/keyboard1.jpg?raw=true" /> 
   <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/keayboard2.jpg?raw=true" />
 </p>
 
-<p align="center">
-  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/settings1.jpg?raw=true" />
-</p>
 
+# Examples of dashboard settings. Each panel is clickable, the field below appears for each panel individually.
 <p align="center">
+  <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/settings1.jpg?raw=true" /> 
   <img src="https://github.com/rainbowbrained/Timer/blob/main/screenshots/settings2.jpg?raw=true" />
 </p>
 
